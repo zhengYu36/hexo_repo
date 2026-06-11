@@ -1,0 +1,40 @@
+{\rtf1\fbidis\ansi\ansicpg0\uc1\deff0\deflang0\deflangfe0{\fonttbl{\f0\fnil \'cb\'ce\'cc\'e5;}{\f1\fnil\fcharset134 \'cb\'ce\'cc\'e5;}}{\colortbl;\red0\green0\blue255;\red255\green0\blue0;\red0\green0\blue0;\red204\green232\blue207;}
+
+
+\pard\sl360\slmult1\fi420\li0\qc\ri0\sb0\sa0\itap0 \plain \f1\b\lang2052\fs24\cf3 docker\uc2\u23433 \'b0\'b2\u35013 \'d7\'b0\u36798 \'b4\'ef\u26790 \'c3\'ce\u25968 \'ca\'fd\u25454 \'be\'dd\u24211 \'bf\'e2\uc1
+\par \pard\sl360\slmult1\fi420\li0\ql\ri0\sb0\sa0\itap0 
+\par \plain \f1\lang2052\fs21 1.\uc2\u25289 \'c0\'ad\u21462 \'c8\'a1\u38236 \'be\'b5\u20687 \'cf\'f1\u25991 \'ce\'c4\u20214 \'bc\'fe\uc1
+\par \uc2\u21442 \'b2\'ce\u32771 \'bf\'bcurl: \uc1\plain \f1\ul\lang2052\fs21\cf1 https://hub.docker.com/r/xuxuclassmate/dameng\plain \f1\lang2052\fs21  \uc2\u65288 \'a3\'a8\u36825 \'d5\'e2\u20010 \'b8\'f6\u22320 \'b5\'d8\u22336 \'d6\'b7\u26159 \'ca\'c7\u21487 \'bf\'c9\u20197 \'d2\'d4\u25289 \'c0\'ad\u21462 \'c8\'a1\u30340 \'b5\'c4\u65289 \'a3\'a9\uc1
+\par docker pull xuxuclassmate/dameng
+\par 
+\par 2.\uc2\u36816 \'d4\'cb\u34892 \'d0\'d0\uc1
+\par docker run -d -p 5236:5236 --restart=always --name dameng --privileged=true -e PAGE_SIZE=16 -e LD_LIBRARY_PATH=/opt/dmdbms/bin -e INSTANCE_NAME=dm8db xuxuclassmate/dameng
+\par 
+\par 3.\uc2\u36827 \'bd\'f8\u20837 \'c8\'eb\uc1
+\par docker exec -it dameng bash
+\par 
+\par 4.\uc2\u30331 \'b5\'c7\u24405 \'c2\'bc\u36798 \'b4\'ef\u26790 \'c3\'ce\u25968 \'ca\'fd\u25454 \'be\'dd\u24211 \'bf\'e2\uc1
+\par ./opt/dmdbms/bin/disql SYSDBA/SYSDBA001
+\par Default account \uc2\u65306 \'a3\'ba SYSDBA\uc1
+\par 
+\par Default Password \uc2\u65306 \'a3\'ba SYSDBA001\uc1
+\par 
+\par 
+\par 5.\uc2\u22914 \'c8\'e7\u20309 \'ba\'ce\u36830 \'c1\'ac\u25509 \'bd\'d3\u25968 \'ca\'fd\u25454 \'be\'dd\u24211 \'bf\'e2\uc1
+\par \plain \f1\ul\lang2052\fs21\cf1 https://www.cnblogs.com/miracle-luna/p/17665761.html\plain \f1\lang2052\fs21   (\uc2\u36825 \'d5\'e2\u20010 \'b8\'f6\u26159 \'ca\'c7\u21487 \'bf\'c9\u20197 \'d2\'d4\u36830 \'c1\'ac\u25509 \'bd\'d3\u30340 \'b5\'c4)\uc1
+\par 
+\par 
+\par \plain \f1\lang2052\fs21\cf2 6.\uc2\u35774 \'c9\'e8\u32622 \'d6\'c3\u22823 \'b4\'f3\u23567 \'d0\'a1\u20889 \'d0\'b4\u19981 \'b2\'bb\u25935 \'c3\'f4\u24863 \'b8\'d0 (\u37325 \'d6\'d8)\uc1
+\par \plain \f1\ul\lang2052\fs21\cf1 https://blog.csdn.net/Januea/article/details/134240787\plain \f1\lang2052\fs21  
+\par docker run -d -p 5236:5236 \\
+\par --restart=always \\
+\par --name dm8 \\
+\par --privileged=true \\
+\par -e CASE_SENSITIVE=0 \\
+\par -e UNICODE_FLAG=1 \\
+\par -e CHARSET=1 \\
+\par -e PAGE_SIZE=16 \\
+\par -e LD_LIBRARY_PATH=/opt/dmdbms/bin \\
+\par -e INSTANCE_NAME=dm8 \\
+\par -v /opt/data/dm8_test:/opt/dmdbms/data  \\
+\par xuxuclassmate/dameng\par}
